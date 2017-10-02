@@ -1,0 +1,59 @@
+//Important memory addresses for super bomber man
+//addresses are for the first stage of multiplayer with 4 players selected
+//different stages and number of characters might shift addresses around
+
+000D50 //address for horizontal position P1
+000D54 //address for vertical position
+
+000D90 //P2 x
+000D94 //y
+
+000DD0 //P3 x
+000DD4 //y
+
+000E10 //P4 x
+000E14 //y
+
+00095A //corresponds to top left tile, each tile is a integer value(32 bit)
+00095C //next tile to the right
+...
+000972 //last tile in first row
+
+00099A //2nd row
+0009DA //3rd row
+000A1A //4th
+000A5A //5th
+000A9A //6th
+000ADA //7th
+000B1A //8th
+000B5A //9th
+000B9A //10th
+000BDA //11th
+
+//Map tile contents, the addresses from above will hold one of these values depending on what object 
+//is on that tile.
+//more than one object can be held on a square so values are combined.
+//example, value 8820 means bomberman and bomb are on the same tile and that tile will have a explosion 
+//occur on it when the bomb explodes
+
+8000 //bomberman
+0020 //bomb
+0800 //is in bomb explosion radius(not yet detonated)
+
+011? //bomb explosion
+011B //center of explosion
+011F //left blast of explosion
+011C //top blast
+011E //right blast
+011D //bottom blast
+
+0040 //breakable wall
+0080 //unbreakable wall
+
+//powerups
+020C //kicks
+020D //tyson gloves
+0204 //skates
+0202 //fire
+0201 //extra bomb
+020F //curse
